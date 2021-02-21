@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cash Register</title>
+        
+        <!--Link The most recent CSS Bootstrap compiled and minified on cdn -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Link the Stylesheet -->
+        <link rel="stylesheet" href="css/styles.css">
+        
+    </head>
+
+    <body onload="fnFillInputs()">
+        
+        <!-- Start Form -->                        
+        <form name="frm1" id="frm1" class="wrapper" action="/" method="get">
+            
+            <!-- Start Header -->
+            <header class="header">
+
+                <br><!-- Line Break -->
+
+            </header><!-- End Header -->
+            
+            <!-- Top Central Section -->
+            <article class="main">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+
+                        <div class="col-md-4 text-center ranger">
+
+                            <h4>PRODUCT NAME</h4>
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-center">
+
+                            <h4>QUANTITY</h4>
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-center">
+
+                            <h4>PRICE</h4>
+
+                        </div><!-- End col-md-4 -->
+
+                    </div><!-- End row -->
+
+                    <div class="row">
+
+                        <div class="col-md-4 text-center">
+
+                            <input type="text" id="ProdNameDestination" class="form-control">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-center">
+
+                            <input type="text" id="ProdQuantityDestination" class="form-control">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-center">
+
+                            <input type="text" id="ProdPriceDestination" class="form-control">
+
+                        </div><!-- End col-md-4 --> 
+
+                    </div><!-- End row -->
+                    
+                    <br><!-- Line Break -->
+                    
+                    <!-- Explanatory Paragraph -->
+                    <p>
+                        * To add a new item, enter the Product Name and the price in the appropriate boxes above and click on Ok * 
+                    </p>
+
+                    <hr><!-- horizontal line -->
+
+                    <br><!-- Line Break -->
+
+                    <div class="row">
+
+                        <div class="col-md-4 text-right">
+
+                            <input type="button" onclick="showValue(7)" id="7" class="btn btn-default btn-lg" value="7">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-center">
+
+                            <input type="button" onclick="showValue(8)" id="8" class="btn btn-default btn-lg" value="8">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-left">
+
+                            <input type="button" onclick="showValue(9)" id="9" class="btn btn-default btn-lg" value="9">
+
+                        </div><!-- End col-md-4 --> 
+
+                    </div><!-- End row -->
+
+                    <br><!-- Line Break -->
+
+                    <div class="row">
+
+                        <div class="col-md-4 text-right">
+
+                            <input type="button" onclick="showValue(4)" id="4" class="btn btn-default btn-lg" value="4">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-center">
+
+                            <input type="button" onclick="showValue(5)" id="5" class="btn btn-default btn-lg" value="5">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-left">
+
+                            <input type="button" onclick="showValue(6)" id="6" class="btn btn-default btn-lg" value="6">
+
+                        </div><!-- End col-md-4 --> 
+
+                    </div><!-- End row -->
+
+                    <br><!-- Line Break -->
+
+                    <div class="row">
+
+                        <div class="col-md-4 text-right">
+
+                            <input type="button" onclick="showValue(1)" id="1" class="btn btn-default btn-lg" value="1">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-center">
+
+                            <input type="button" onclick="showValue(2)" id="2" class="btn btn-default btn-lg" value="2">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-4 text-left">
+
+                            <input type="button" onclick="showValue(3)" id="3" class="btn btn-default btn-lg" value="3">
+
+                        </div><!-- End col-md-4 --> 
+
+                    </div><!-- End row -->
+
+                    <br><!-- Line Break -->
+
+                    <div class="row">
+
+                        <div class="col-md-4 text-right">
+
+                            <input type="button" onclick="showValue(0)" id="0" class="btn btn-default btn-lg" value="0">
+
+                        </div><!-- End col-md-4 -->
+
+                        <div class="col-md-8 text-center">
+
+                            <input type="button" onclick="showValue('.')" id="dot" class="btn btn-default btn-lg" value=".">
+                            <input type="button" onclick="fnSendToQty()" id="qty" class="btn btn-default btn-lg" value="Qty">
+                            <input type="button" onclick="fnSendToPrice()" id="dollard" class="btn btn-default btn-lg" value="$">  
+                            <input type="button" onclick="fnErase()" id="eraser" class="btn btn-default btn-lg" value="Erase"> 
+                            <input type="button" onclick="fnOk()" id="ok" class="btn btn-default btn-lg" value="Ok">
+
+                        </div><!-- End col-md-4 -->
+
+                    </div><!-- End row -->
+
+                </div><!-- End container -->
+
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                
+                <!-- paragraph to display the numbers clicked on the calculator -->    
+                <p class="lead" id="display"></p>
+
+            </article><!-- End of Top Central Section -->
+
+            <!-- top ASIDE LEFT SECTION -->    
+            <aside class="aside aside-1">
+               
+                <h4><em>CHOICE OF ITEMS</em></h4>
+                <hr><!-- Horizontal Line -->
+                
+                <input type="text" id="choice0" onmouseover="fnTransfer(0)">
+                
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                
+                <input type="text" id="choice1" onmouseover="fnTransfer(1)">
+                
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                
+                <input type="text" id="choice2" onmouseover="fnTransfer(2)">
+                
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                
+                <input type="text" id="choice3" onmouseover="fnTransfer(3)">
+                
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                
+                <input type="text" id="choice4" onmouseover="fnTransfer(4)">
+                
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                
+                <select id="lstChoices" class="form-control"></select>
+                <hr><!-- Horizontal Line -->
+
+            </aside><!-- end ASIDE LEFT SECTION -->
+            
+            <!-- top ASIDE RIGHT SECTION  -->
+            <aside class="aside aside-2">
+                
+                <h4>THE BILL</h4>
+                <hr><!-- Horizontal Line -->
+                
+                <input type="button" onclick="" class="btn btn-success" value="New Invoice">
+                
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+
+                <select id="myCommand" name="bill" size="10" multiple class="form-control"></select>
+
+                <br><!-- Line Break -->
+                
+                <input type="button" onclick="fnDelete()" class="btn btn-danger" id="Delete" value="Delete an item">
+                
+                <br><!-- Line Break -->
+                <br><!-- Line Break -->
+                
+                <div class="row">
+                    
+                    <div class="col-md-6 Poster">
+                       
+                        <p class="lead">Sub-Total : </p>
+                        
+                    </div><!-- End col-md-6 -->
+                    
+                    <div class="col-md-6 Poster">
+                       
+                        <p class="lead" id="theTotalAmount">0.00$</p>
+                        
+                    </div><!-- End col-md-6 -->
+                    
+                </div><!-- End row -->
+                
+                <div class="row">
+                    
+                    <div class="col-md-6 taxes">
+                       
+                        <p>GST (5%) : </p> 
+                        
+                    </div><!-- End col-md-6 -->
+                    
+                    <div class="col-md-6 taxes">
+                       
+                        <p id="theGST">0.00$</p>
+                        
+                    </div><!-- End col-md-6 -->
+                    
+                </div><!-- End row -->
+                
+                <div class="row">
+                    
+                    <div class="col-md-6 taxes">
+                       
+                        <p>PST (9.975%) : </p> 
+                        
+                    </div><!-- End col-md-6 -->
+                    
+                    <div class="col-md-6 taxes">
+                       
+                        <p id="thePST">0.00$</p> 
+                        
+                    </div><!-- End col-md-6 -->
+                    
+                </div><!-- End row -->
+                
+                <div class="row">
+                    
+                    <div class="col-md-6 Poster">
+                       
+                        <p class="lead">Total with taxes :</p>
+                         
+                    </div><!-- End col-md-6 -->
+                    
+                    <div class="col-md-6 Poster">
+                       
+                        <p class="lead" id="theFinalAmount">0.00$</p> 
+                        
+                    </div><!-- End col-md-6 -->
+                    
+                </div><!-- End row -->
+                
+                <br><!-- Line Break -->
+                
+                <input type="button" onclick="fnCaluclateTotal()" class="btn btn-success" id="confirmInvoice" value="CONFIRM INVOICE">
+
+                <hr><!-- Horizontal Line -->
+
+                <h4>TOTAL OF THE DAY</h4>
+
+                <input type="text" id="totalOfDay" value="" class="form-control">
+                
+                <br><!-- Line Break -->
+                
+                <input type="button" onclick="fnCaltotal(), fnResetEverything()" class="form-control btn btn-success" value="Calculate">
+
+
+                <br><!-- Line Break -->
+                <hr><!-- Horizontal Line -->
+
+                <p id="Totalday"></p>
+
+            </aside><!-- End ASIDE SECTION OF RIGHT SIDE -->
+            
+            <!-- Start footer -->
+            <footer class="footer">
+
+                <br><!-- Line Break -->
+                Cash Register 2020 - version 1.1
+
+            </footer><!-- End footer -->
+
+        </form><!-- End form -->
+        
+        <script src="js/main.js"></script>
+    </body>
+</html>
